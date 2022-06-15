@@ -25,6 +25,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
+    procedure GeraSQL;
   public
     { Public declarations }
   end;
@@ -38,12 +39,7 @@ implementation
 
 procedure TfTarefa1.btnGeraSQLClick(Sender: TObject);
 begin
-  memoSQLGerado.Lines.Clear;
-  spQuery1.spColunas := TStringList(memocolunas.Lines);
-  spQuery1.spTabelas := TStringList(memoTabela.Lines);
-  spQuery1.spCondicoes := TStringList(memoCondicoes.Lines);
-  spQuery1.GeraSQL;
-  memoSQLGerado.Lines.Add(spquery1.SQL.Text);
+  GeraSQL;
 end;
 
 procedure TfTarefa1.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -52,4 +48,14 @@ begin
   Release;
   fTarefa1 := nil;
 end;
+procedure TfTarefa1.GeraSQL;
+begin
+  memoSQLGerado.Lines.Clear;
+  spQuery1.spColunas := TStringList(memocolunas.Lines);
+  spQuery1.spTabelas := TStringList(memoTabela.Lines);
+  spQuery1.spCondicoes := TStringList(memoCondicoes.Lines);
+  spQuery1.GeraSQL;
+  memoSQLGerado.Lines.Add(spquery1.SQL.Text);
+end;
+
 end.

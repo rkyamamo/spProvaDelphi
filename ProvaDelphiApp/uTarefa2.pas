@@ -104,7 +104,7 @@ end;
 
 procedure TfTarefa2.btnFecharClick(Sender: TObject);
 begin
-  ProgressBar1.Position := 100;
+  Close;
 end;
 
 procedure TfTarefa2.FormClose(Sender: TObject; var Action: TCloseAction);

@@ -85,14 +85,19 @@ procedure TfTarefa3.ObterTotal;
 var
   vTotal: Currency;
 begin
-  FCDSVirtual.First;
-  vTotal := 0;
-  While not (FCDSVirtual.Eof) do
-  begin
-    vTotal := vTotal + FCDSVirtual.FieldByName('Valor').AsCurrency;
-    FCDSVirtual.Next
+  FCDSVirtual.DisableControls;
+  try
+    FCDSVirtual.First;
+    vTotal := 0;
+    while not (FCDSVirtual.Eof) do
+    begin
+      vTotal := vTotal + FCDSVirtual.FieldByName('Valor').AsCurrency;
+      FCDSVirtual.Next
+    end;
+    edtTotal.Text := FloatToStr(vTotal);
+  finally
+    FCDSVirtual.EnableControls;
   end;
-  edtTotal.Text := FloatToStr(vTotal);
 end;
 
 procedure TfTarefa3.ObterTotalDivisoes;
@@ -100,19 +105,24 @@ var
   vSoma: Currency;
   vValorAnterior: Currency;
 begin
-  FCDSVirtual.First;
-  vSoma := 0;
-  vValorAnterior := 0;
-  While not (FCDSVirtual.Eof) do
-  begin
-    if vValorAnterior > 0 then
+  FCDSVirtual.DisableControls;
+  try
+    FCDSVirtual.First;
+    vSoma := 0;
+    vValorAnterior := 0;
+    while not (FCDSVirtual.Eof) do
     begin
-      vSoma := vSoma + FCDSVirtual.FieldByName('Valor').AsCurrency/vValorAnterior;
+      if vValorAnterior > 0 then
+      begin
+        vSoma := vSoma + FCDSVirtual.FieldByName('Valor').AsCurrency/vValorAnterior;
+      end;
+      vValorAnterior := FCDSVirtual.FieldByName('Valor').AsCurrency;
+      FCDSVirtual.Next
     end;
-    vValorAnterior := FCDSVirtual.FieldByName('Valor').AsCurrency;
-    FCDSVirtual.Next
+    edtTotalDiv.Text := FloatToStr(SimpleRoundTo(vSoma, -2));
+  finally
+    FCDSVirtual.EnableControls;
   end;
-  edtTotalDiv.Text := FloatToStr(SimpleRoundTo(vSoma, -2));
 end;
 
 procedure TfTarefa3.Populartela;
@@ -124,8 +134,8 @@ begin
      FCDSVirtual.Insert;
      FCDSVirtual.FieldByName('IdProjeto').AsInteger := i;
      FCDSVirtual.FieldByName('NomeProjeto').AsString := Format('Projeto %d',[i]);
-     RandSeed := i;
-     FCDSVirtual.FieldByName('Valor').AsCurrency := Random(50000)/100;
+     randomize;
+     FCDSVirtual.FieldByName('Valor').AsCurrency := Random(100000)/100;
    end;
 
 end;
