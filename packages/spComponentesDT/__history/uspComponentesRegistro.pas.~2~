@@ -1,0 +1,18 @@
+unit uspComponentesRegistro;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, uspQuery;
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('spComponentes', [TspQuery]);
+end;
+
+end.
+

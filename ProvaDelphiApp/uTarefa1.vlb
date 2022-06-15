@@ -1,0 +1,13 @@
+﻿[]
+Coordinates=144,1,91,36
+
+[lblColunas]
+Coordinates=136,10,53,58
+Visible=True
+
+[lblTabela]
+Coordinates=73,10,53,58
+
+[lblCondicoes]
+Coordinates=10,10,53,58
+

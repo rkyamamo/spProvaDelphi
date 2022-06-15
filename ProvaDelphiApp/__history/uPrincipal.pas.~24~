@@ -1,0 +1,76 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TfPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    menuTarefa: TMenuItem;
+    miTarefa1: TMenuItem;
+    miTarefa2: TMenuItem;
+    miTarefa3: TMenuItem;
+    miSair: TMenuItem;
+    N1: TMenuItem;
+    procedure miTarefa1Click(Sender: TObject);
+    procedure miSairClick(Sender: TObject);
+    procedure miTarefa2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure CreateFormFromName(const FormName : string);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPrincipal: TfPrincipal;
+
+implementation
+
+uses uTarefa1, uTarefa2;
+{$R *.dfm}
+
+procedure TfPrincipal.CreateFormFromName(const FormName: string);
+var
+  vFormClass : TFormClass;
+  vForm : TForm;
+begin
+  vFormClass := TFormClass(FindClass(FormName));
+  if (not Assigned(vForm)) or (csDestroying in  TComponent(vForm).ComponentState) then
+  begin
+//    vForm := vFormClass.Create(Application);
+    Application.CreateForm(vFormClass, vForm);
+  end;
+  vForm.Show;
+end;
+
+procedure TfPrincipal.FormCreate(Sender: TObject);
+begin
+  RegisterClass(TfTarefa1);
+  RegisterClass(TfTarefa2);
+end;
+
+procedure TfPrincipal.miSairClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfPrincipal.miTarefa1Click(Sender: TObject);
+begin
+  CreateFormFromName('TfTarefa1');
+end;
+
+procedure TfPrincipal.miTarefa2Click(Sender: TObject);
+begin
+  if not Assigned(fTarefa2) then
+  begin
+    Application.CreateForm(TfTarefa2, fTarefa2);
+  end;
+  fTarefa2.Show;
+end;
+
+end.

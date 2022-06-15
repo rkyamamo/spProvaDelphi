@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/14 18:38:44.000.020,=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 18:38:56.000.103,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa2.pas=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 18:39:06.000.701,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa2.pas=</Transaction>
+    <Transaction>2022/06/14 18:39:13.000.010,=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 18:39:18.000.942,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa2.pas=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 18:39:18.000.942,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa2.dfm=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.dfm</Transaction>
+    <Transaction>2022/06/14 21:13:13.000.931,=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 21:13:43.000.567,C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas=C:\dev\spProvaDelphi\ProvaDelphiApp\classes\uThreadTarefa2.pas</Transaction>
+    <Transaction>2022/06/14 21:31:41.000.696,C:\dev\spProvaDelphi\ProvaDelphiApp\classes\uThreadTarefa2.pas=C:\dev\spProvaDelphi\ProvaDelphiApp\classes\uThreadProgresso.pas</Transaction>
+    <Transaction>2022/06/15 10:21:27.327,=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 10:22:02.826,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa3.dfm=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.dfm</Transaction>
+    <Transaction>2022/06/15 10:22:02.826,C:\dev\spProvaDelphi\ProvaDelphiApp\uTarefa3.pas=C:\dev\spProvaDelphi\ProvaDelphiApp\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

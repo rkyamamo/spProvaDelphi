@@ -1,0 +1,13 @@
+unit uThreadTarefa2;
+
+interface
+
+uses
+  System.Classes;
+implementation
+
+type
+  TThreadTarefa2 = class(TThread)
+
+  end;
+end.

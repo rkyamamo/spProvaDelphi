@@ -1,0 +1,132 @@
+
+--------------------------------2022/6/14 17:46:40--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TMemoStrings
+
+Virtual method: Destroy
+
+Virtual method address: 4B8D04
+
+The allocation number was: 1496
+
+The object was allocated by thread 0x1EA8, and the stack trace (return addresses) at the time was:
+406C5E [System.pas][System][@GetMem$qqri][4391]
+407B77 [System.pas][System][TObject.NewInstance$qqrv][15641]
+4082BA [System.pas][System][@ClassCreate$qqrpvzc][16951]
+4B8CCA [System.Classes.pas][System.Classes][Classes.TStrings.$bctr$qqrv][5732]
+53C690 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.SetHeight$qqri][5713]
+556F77 [Vcl.StdCtrls.pas][Vcl.StdCtrls][Stdctrls.TCustomMemo.$bctr$qqrp25System.Classes.TComponent][3392]
+4C1CFC [System.Classes.pas][System.Classes][CreateComponent][9717]
+4C1F29 [System.Classes.pas][System.Classes][Classes.TReader.ReadComponent$qqrp25System.Classes.TComponent][9763]
+4C21DA [System.Classes.pas][System.Classes][Classes.TReader.ReadDataInner$qqrxp25System.Classes.TComponent][9829]
+4C2119 [System.Classes.pas][System.Classes][Classes.TReader.ReadData$qqrxp25System.Classes.TComponent][9808]
+4CCEF2 [System.Classes.pas][System.Classes][Classes.TComponent.ReadState$qqrp22System.Classes.TReader][15542]
+
+The object was subsequently freed by thread 0x1EA8, and the stack trace (return addresses) at the time was:
+407B95 [System.pas][System][TObject.FreeInstance$qqrv][15650]
+408305 [System.pas][System][@ClassDestroy$qqrxp14System.TObject][16993]
+4B8D81 [System.Classes.pas][System.Classes][Classes.TStrings.$bdtr$qqrv][5747]
+53B35E [Vcl.Controls.pas][Vcl.Controls][Controls.ListRemove$qqrrp20System.Classes.TListpv][4911]
+407C9B [System.pas][System][TObject.Free$qqrv][15718]
+557006 [Vcl.StdCtrls.pas][Vcl.StdCtrls][Stdctrls.TCustomMemo.$bdtr$qqrv][3407]
+54073F [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.$bdtr$qqrv][8390]
+408305 [System.pas][System][@ClassDestroy$qqrxp14System.TObject][16993]
+5E6AB4 [Vcl.Forms.pas][Vcl.Forms][Forms.TScrollingWinControl.$bdtr$qqrv][3060]
+5E796D [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.$bdtr$qqrv][3732]
+407C9B [System.pas][System][TObject.Free$qqrv][15718]
+
+The current thread ID is 0x1EA8, and the stack trace (return addresses) leading to this error is:
+407C9B [System.pas][System][TObject.Free$qqrv][15718]
+6F398F [UspQuery.pas][UspQuery][TspQuery.$bdtr$qqrv][39]
+4CCC94 [System.Classes.pas][System.Classes][Classes.TComponent.DestroyComponents$qqrv][15391]
+4CC918 [System.Classes.pas][System.Classes][Classes.TComponent.$bdtr$qqrv][15242]
+53BE52 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.$bdtr$qqrv][5382]
+407B95 [System.pas][System][TObject.FreeInstance$qqrv][15650]
+408305 [System.pas][System][@ClassDestroy$qqrxp14System.TObject][16993]
+4B8034 [System.Classes.pas][System.Classes][Classes.TPersistent.$bdtr$qqrv][5161]
+5407B8 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.$bdtr$qqrv][8406]
+5E6AB4 [Vcl.Forms.pas][Vcl.Forms][Forms.TScrollingWinControl.$bdtr$qqrv][3060]
+5E796D [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.$bdtr$qqrv][3732]
+
+Current memory dump of 256 bytes starting at pointer address 7FE3E2D0:
+90 12 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00
+84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 BB FE 4A 79 00 00 00 00 91 DB E3 7F
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 06 00 00 5E 6C 40 00 77 7B 40 00 BA 82 40 00
+5E E8 51 00 D8 C8 4C 00 0A BC 53 00 D5 04 54 00 86 47 41 00 13 74 55 00 14 77 55 00 FC 1C 4C 00
+A8 1E 00 00 A8 1E 00 00 95 7B 40 00 05 83 40 00 DE E8 51 00 9B 7C 40 00 FA BD 53 00 7A 6C 40 00
+95 7B 40 00 05 83 40 00 34 80 4B 00 B8 07 54 00 3E 82 55 00 2C 00 00 00 58 87 51 00 7D 71 93 86
+90 12 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00
+84 15 77 00 84 15 77 00 84 15 77 00 82 8E 6C 79 84 15 77 00 84 15 77 00 00 00 00 00 91 E4 E3 7F
+ê  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .
+Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  ª  ˛  J  y  .  .  .  .  ë  €  „  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ^  l  @  .  w  {  @  .  ∫  Ç  @  .
+^  Ë  Q  .  ÿ  »  L  .  .  º  S  .  ’  .  T  .  Ü  G  A  .  .  t  U  .  .  w  U  .  ¸  .  L  .
+®  .  .  .  ®  .  .  .  ï  {  @  .  .  É  @  .  ﬁ  Ë  Q  .  õ  |  @  .  ˙  Ω  S  .  z  l  @  .
+ï  {  @  .  .  É  @  .  4  Ä  K  .  ∏  .  T  .  >  Ç  U  .  ,  .  .  .  X  á  Q  .  }  q  ì  Ü
+ê  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .
+Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ç  é  l  y  Ñ  .  w  .  Ñ  .  w  .  .  .  .  .  ë  ‰  „  
+
+--------------------------------2022/6/14 17:46:47--------------------------------
+FastMM has detected an error during a FreeMem operation. An attempt has been made to free/reallocate an unallocated block.
+
+The block size is: 28
+
+This block was allocated by thread 0x1EA8, and the stack trace (return addresses) at the time was:
+406C5E [System.pas][System][@GetMem$qqri][4391]
+40988F [System.pas][System][@NewUnicodeString$qqri][23901]
+40A7EF [System.pas][System][@UStrSetLength$qqrr20System.UnicodeStringi][29184]
+40D86F [System.pas][System][UTF8ToUnicodeString$qqrrx29System.%SmallString$uc$i255$%][37386]
+40D8DB [System.pas][System][UTF8ToString$qqrrx29System.%SmallString$uc$i255$%][37403]
+407A4A [System.pas][System][TObject.ClassName$qqrv][15592]
+5F25BC [Vcl.Forms.pas][Vcl.Forms][Forms.IsClass$qqrp14System.TObjectp17System.TMetaClass][10546]
+5F264E [Vcl.Forms.pas][Vcl.Forms][Forms.TApplication.HandleException$qqrp14System.TObject][10566]
+542AC4 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.MainWndProc$qqrr24Winapi.Messages.TMessage][9756]
+7669C3A2 [RaiseException]
+77A78882 [Unknown function at RtlInterlockedCompareExchange64]
+
+The allocation number was: 2260
+
+The block was previously freed by thread 0x1EA8, and the stack trace (return addresses) at the time was:
+406C7A [System.pas][System][@FreeMem$qqrpv][4439]
+4099AE [System.pas][System][@UStrArrayClr$qqrpvi][24268]
+5F25F6 [Vcl.Forms.pas][Vcl.Forms][Forms.IsClass$qqrp14System.TObjectp17System.TMetaClass][10549]
+5F264E [Vcl.Forms.pas][Vcl.Forms][Forms.TApplication.HandleException$qqrp14System.TObject][10566]
+542AC4 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.MainWndProc$qqrr24Winapi.Messages.TMessage][9756]
+7669C3A2 [RaiseException]
+77A78882 [Unknown function at RtlInterlockedCompareExchange64]
+77A78854 [Unknown function at RtlInterlockedCompareExchange64]
+77A590FF [RtlUnwind]
+77A21C31 [Unknown function at RtlRunOnceComplete]
+77A38873 [Unknown function at RtlAllocateHeap]
+
+The current thread ID is 0x1EA8, and the stack trace (return addresses) leading to this error is:
+428606 [System.SysUtils.pas][System.SysUtils][Sysutils.StrDispose$qqrpb][11980]
+53BE05 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.$bdtr$qqrv][5377]
+5407B8 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.$bdtr$qqrv][8406]
+5E6AB4 [Vcl.Forms.pas][Vcl.Forms][Forms.TScrollingWinControl.$bdtr$qqrv][3060]
+5E796D [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.$bdtr$qqrv][3732]
+407C9B [System.pas][System][TObject.Free$qqrv][15718]
+4CCC94 [System.Classes.pas][System.Classes][Classes.TComponent.DestroyComponents$qqrv][15391]
+5E5882 [Vcl.Forms.pas][Vcl.Forms][Forms.DoneApplication$qqrv][2167]
+4264A3 [System.SysUtils.pas][System.SysUtils][Sysutils.DoExitProc$qqrv][5768]
+4096BC [System.pas][System][@Halt0$qqrv][23435]
+762E33 
+
+Current memory dump of 256 bytes starting at pointer address 7FD6BAC0:
+90 12 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 84 15 77 00 22 D8 47 C1
+84 15 77 00 84 15 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ê  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  Ñ  .  w  .  "  ÿ  G  ¡
+Ñ  .  w  .  Ñ  .  w  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .

@@ -1,0 +1,58 @@
+object fTarefa3: TfTarefa3
+  Left = 0
+  Top = 0
+  Caption = 'Tarefa 3'
+  ClientHeight = 319
+  ClientWidth = 663
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 35
+    Width = 663
+    Height = 193
+    Align = alTop
+    DataSource = dsVirtual
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object PanelSuperior: TPanel
+    Left = 0
+    Top = 0
+    Width = 663
+    Height = 35
+    Align = alTop
+    ShowCaption = False
+    TabOrder = 1
+    ExplicitWidth = 642
+    object Label1: TLabel
+      Left = 0
+      Top = 13
+      Width = 92
+      Height = 13
+      Caption = 'Valores por projeto'
+    end
+  end
+  object cdsVirtual: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 104
+    Top = 248
+  end
+  object dsVirtual: TDataSource
+    DataSet = cdsVirtual
+    Left = 136
+    Top = 248
+  end
+end
