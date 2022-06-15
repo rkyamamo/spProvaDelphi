@@ -22,7 +22,6 @@ type
     { Protected declarations }
   public
     { Public declarations }
-    destructor  Destroy; override;
   published
     property spColunas: TStringList read FspColunas write SetspColunas;
     property spCondicoes: TStringList read FspCondicoes write SetspCondicoes;
@@ -34,16 +33,9 @@ implementation
 
 { TspQuery }
 
-destructor TspQuery.Destroy;
-begin
-//  FspCondicoes.Free;
-//  FspColunas.Free;
-//  FspTabelas.Free;
-  inherited;
-end;
-
 procedure TspQuery.GeraSQL;
 begin
+  SQL.Clear;
   SQL.Add(MontaSQL(tlColunas, FspColunas, 'Select ', ', '));
   SQL.Add(MontaSQL(tlTabelas, FspTabelas, 'from '));
   SQL.Add(MontaSQL(tlCondicoes, FspCondicoes, 'where ', ' and '));

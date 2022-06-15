@@ -38,6 +38,7 @@ implementation
 
 procedure TfTarefa1.btnGeraSQLClick(Sender: TObject);
 begin
+  memoSQLGerado.Lines.Clear;
   spQuery1.spColunas := TStringList(memocolunas.Lines);
   spQuery1.spTabelas := TStringList(memoTabela.Lines);
   spQuery1.spCondicoes := TStringList(memoCondicoes.Lines);
